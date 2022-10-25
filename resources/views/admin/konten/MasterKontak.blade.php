@@ -3,7 +3,7 @@
 @section('is_title_konten', 'MasterKontak' )
 @section('is_konten')
 <!-- <form action="/masterkontak" method="post">
-    @csrf
+    
     <button class="btn btn-primary col-md-12 mb-3">Kirim</button>
 </form> -->
 

@@ -15,7 +15,7 @@
 <link href="<?php echo e(asset('css/sb-admin-2.min.css')); ?>" rel="stylesheet">
 
 
-<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" >
 
 
 <link href="<?php echo e(asset('vendor/datatables/dataTables.bootstrap4.min.css')); ?>" rel="stylesheet"><?php /**PATH C:\Users\Reno\PgwbTaskEz\resources\views/admin/layout/head.blade.php ENDPATH**/ ?>
