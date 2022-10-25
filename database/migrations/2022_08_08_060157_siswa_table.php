@@ -19,7 +19,7 @@ class SiswaTable extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('jk');
-            $table->char('foto');
+            $table->string('foto');
             $table->text('about');
             $table->timestamps();
         });

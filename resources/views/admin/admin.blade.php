@@ -30,7 +30,9 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <h1>@yield('is_title_konten')</h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">@yield('is_title_konten')</li>
+                    </ol>
                     @yield('is_konten')
 
                 </div>
