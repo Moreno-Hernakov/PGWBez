@@ -17,7 +17,7 @@ class siswaController extends Controller
     public function index()
     {
         $data = siswa::all();
-        return view('admin.konten.masterSiswa', ["datas" => $data]);
+        return view('admin.konten.MasterSiswa', ["datas" => $data]);
     }
 
     /**

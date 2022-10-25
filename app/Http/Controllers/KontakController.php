@@ -19,7 +19,7 @@ class kontakController extends Controller
         $jenis = jenis::get();
         $datas = siswa::paginate(1);
         // return $jenis;
-        return view('admin.konten.masterKontak', compact('datas', 'jenis'));
+        return view('admin.konten.MasterKontak', compact('datas', 'jenis'));
     }
 
     /**

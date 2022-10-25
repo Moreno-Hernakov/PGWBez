@@ -15,7 +15,7 @@
 <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
 
-<meta name="csrf-token" content="{{ csrf_token() }}" />
+<meta name="csrf-token" content="{{ csrf_token() }}" >
 
 
 <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">

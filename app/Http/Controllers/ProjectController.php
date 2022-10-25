@@ -10,7 +10,7 @@ class ProjectController extends Controller
 {
     public function view(){
         $data = siswa::paginate(1);
-        return view('admin.konten.masterProject', ["datas" => $data]);
+        return view('admin.konten.MasterProject', ["datas" => $data]);
         // return view('admin.konten.masterProject');
         // $data = kontak::with('siswa', 'jenis')->get();
         // return view('admin.konten.masterProject', ["data" => $data]);

@@ -191,41 +191,6 @@
         $(":hidden#id").val('')
     }
 
-    function addKontak(){
-        siswa_id = $("#siswa_id").val()
-        jenis_id = $("#jenis_id").val()
-        deskripsi = $("#deskripsi").val()
-        $.ajax({
-            url: "/masterkontak",
-            type:"POST",
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data:{ siswa_id, jenis_id, deskripsi},
-            success: res => {
-                // console.log(res)
-                if(res.success){
-                    alert(res.messagge)
-                    $('#exampleModalCenter').modal('hide');
-                    location.reload();
-                    // $('.formData').slideDown();
-                    // $("#jenisKontak").val(res.data.jenis_kontak)
-                    // $("#id").val(res.data.id)
-                } 
-            },
-            error: error => {
-                console.warn(error.responseJSON);
-                $.each(error.responseJSON.errors, function (i, err) {
-                // var el = $(document).find('[name="'+i+'"]');
-                alert(err[0]);
-                // el.after($('<span style="color: red;">'+error[0]+'</span>'));
-            });
-                // console.log(error)
-            }
-        });
-        
-    }
-
     function updateJenis(id){
         $.ajax({
             url: "/updatejenis",
@@ -301,6 +266,41 @@
         } 
         
         
+        
+    }
+
+    function addKontak(){
+        siswa_id = $("#siswa_id").val()
+        jenis_id = $("#jenis_id").val()
+        deskripsi = $("#deskripsi").val()
+        $.ajax({
+            url: "/masterkontak",
+            type:"POST",
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data:{ siswa_id, jenis_id, deskripsi},
+            success: res => {
+                // console.log(res)
+                if(res.success){
+                    alert(res.messagge)
+                    $('#exampleModalCenter').modal('hide');
+                    location.reload();
+                    // $('.formData').slideDown();
+                    // $("#jenisKontak").val(res.data.jenis_kontak)
+                    // $("#id").val(res.data.id)
+                } 
+            },
+            error: error => {
+                console.warn(error.responseJSON);
+                $.each(error.responseJSON.errors, function (i, err) {
+                // var el = $(document).find('[name="'+i+'"]');
+                alert(err[0]);
+                // el.after($('<span style="color: red;">'+error[0]+'</span>'));
+            });
+                // console.log(error)
+            }
+        });
         
     }
 
