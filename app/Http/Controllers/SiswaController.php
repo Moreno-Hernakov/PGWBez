@@ -88,7 +88,7 @@ class siswaController extends Controller
      */
     public function show($id)
     {
-        $siswa = siswa::where('id', $id)->with('kontak')->get();
+        $siswa = siswa::where('id', $id)->with('kontak', 'project')->get();
         // return $siswa;
         return view('admin.konten.siswa.ShowSiswa', ["siswa" => $siswa]);
     }

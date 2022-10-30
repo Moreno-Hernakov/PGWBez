@@ -150,13 +150,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kontak {{$datas->nama}}</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kontak {{$data->nama}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">   
-            <input type="hidden" name="siswa_id" id="siswa_id" value="{{$datas->id}}"> 
+            <input type="hidden" name="siswa_id" id="siswa_id" value="{{$data->id}}"> 
             <div class="form-group form-floating">
                 <label>Jenis Kontak</label>
                 <select name="jenis_id" id="jenis_id" class="form-control">

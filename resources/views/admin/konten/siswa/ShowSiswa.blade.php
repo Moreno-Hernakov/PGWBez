@@ -272,17 +272,30 @@
           
       </div>
     </div>
-    @endforeach
+    
   </div>
   <div class="col-lg-8">    
     <div class="card shadow mb-4"> 
       <div class="card-header bg-brown">  
-            <h6 class="m-0 font-weight-bold text-primary"> <i class="fas fa-tasks"> </i> Project Siswa </h6> 
+            <h6 class="m-0 font-weight-bold text-primary"> <i class="fas fa-book"> </i> Project Siswa </h6> 
       </div> 
-      <div class="card-body"> 
-      </div> 
+      <div class="card-body">
+        @forelse($p->project as $x) 
+        <div class="card shadow mb-4">
+          <div class="card-header bg-brown">  
+            <h6 class="m-0 font-weight-bold text-primary">{{$x->nama_project}} </h6> 
+          </div> 
+          <div class="card-body">
+            <p>{{$x->deskripsi}}</p>
+          </div> 
+        </div>
+          @empty
+          <P>Project kosong</P>
+          @endforelse
+        </div> 
     </div> 
-  </div>   
+  </div> 
+  @endforeach  
 </div> 
  
  

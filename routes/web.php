@@ -9,7 +9,7 @@ use App\Http\Controllers\loginController;
 
 
 // =======================================
-// ============ FOR MY LANDING  ============ 
+// ========== FOR MY LANDING  ============ 
 // =======================================
 Route::middleware('guest')->group(function () {
     Route::get('/kontak', function () {

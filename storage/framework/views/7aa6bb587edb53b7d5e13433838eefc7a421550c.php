@@ -272,17 +272,30 @@
           
       </div>
     </div>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
   </div>
   <div class="col-lg-8">    
     <div class="card shadow mb-4"> 
       <div class="card-header bg-brown">  
-            <h6 class="m-0 font-weight-bold text-primary"> <i class="fas fa-tasks"> </i> Project Siswa </h6> 
+            <h6 class="m-0 font-weight-bold text-primary"> <i class="fas fa-book"> </i> Project Siswa </h6> 
       </div> 
-      <div class="card-body"> 
-      </div> 
+      <div class="card-body">
+        <?php $__empty_1 = true; $__currentLoopData = $p->project; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $x): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?> 
+        <div class="card shadow mb-4">
+          <div class="card-header bg-brown">  
+            <h6 class="m-0 font-weight-bold text-primary"><?php echo e($x->nama_project); ?> </h6> 
+          </div> 
+          <div class="card-body">
+            <p><?php echo e($x->deskripsi); ?></p>
+          </div> 
+        </div>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+          <P>Project kosong</P>
+          <?php endif; ?>
+        </div> 
     </div> 
-  </div>   
+  </div> 
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>  
 </div> 
  
  
