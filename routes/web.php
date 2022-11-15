@@ -46,7 +46,7 @@ Route::get('/admin', function () {
 
 
 Route::middleware('auth')->group(function () {
-    Route::resource('/mastersiswa', SiswaController::class)->middleware('auth');;
+    Route::resource('/mastersiswa', siswaController::class)->middleware('auth');
     
     // note: KONTAK CONTROLLER
     Route::resource('/masterkontak', KontakController::class); 

@@ -116,7 +116,7 @@
                                             <i class="fa fa-plus "></i>
                                         </button>
                                     </form> --}}
-                                    <button type="button" class="btn btn-primary btn-circle btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <button type="button" class="btn btn-primary btn-circle btn-sm" data-toggle="modal" data-target="#exampleModalCenter{{ $data->id }}">
                                         +
                                     </button>
                                     <a onclick="show({{ $data->id }})" class="btn btn-circle btn-sm">
@@ -146,17 +146,18 @@
     </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  @foreach ($datas as $item)
+  <div class="modal fade" id="exampleModalCenter{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kontak {{$data->nama}}</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kontak {{$item->nama}}</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">   
-            <input type="hidden" name="siswa_id" id="siswa_id" value="{{$data->id}}"> 
+            <input type="hidden" name="siswa_id" id="siswa_id" value="{{$item->id}}"> 
             <div class="form-group form-floating">
                 <label>Jenis Kontak</label>
                 <select name="jenis_id" id="jenis_id" class="form-control">
@@ -179,6 +180,7 @@
       </div>
     </div>
   </div>
+  @endforeach
 </div>
 <script>
     window.onload = function() {+

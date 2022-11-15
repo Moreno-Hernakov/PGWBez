@@ -105,7 +105,7 @@
                                 <th><?php echo e($data->nama); ?></th>
                                 <th class="d-flex">
                                     
-                                    <button type="button" class="btn btn-primary btn-circle btn-sm" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <button type="button" class="btn btn-primary btn-circle btn-sm" data-toggle="modal" data-target="#exampleModalCenter<?php echo e($data->id); ?>">
                                         +
                                     </button>
                                     <a onclick="show(<?php echo e($data->id); ?>)" class="btn btn-circle btn-sm">
@@ -136,17 +136,18 @@
     </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <?php $__currentLoopData = $datas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+  <div class="modal fade" id="exampleModalCenter<?php echo e($item->id); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kontak <?php echo e($data->nama); ?></h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Tambah Kontak <?php echo e($item->nama); ?></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">   
-            <input type="hidden" name="siswa_id" id="siswa_id" value="<?php echo e($data->id); ?>"> 
+            <input type="hidden" name="siswa_id" id="siswa_id" value="<?php echo e($item->id); ?>"> 
             <div class="form-group form-floating">
                 <label>Jenis Kontak</label>
                 <select name="jenis_id" id="jenis_id" class="form-control">
@@ -176,6 +177,7 @@ unset($__errorArgs, $__bag); ?>" name="deskripsi" id="deskripsi" />
       </div>
     </div>
   </div>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div>
 <script>
     window.onload = function() {+
