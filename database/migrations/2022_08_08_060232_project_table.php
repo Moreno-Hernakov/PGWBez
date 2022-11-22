@@ -15,7 +15,7 @@ class ProjectTable extends Migration
     {
         Schema::create('project', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('siswa_id')->constrained('siswa');
+            $table->foreignId('siswa_id')->constrained('siswa')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_project');
             $table->string('deskripsi');
             $table->date('tanggal');

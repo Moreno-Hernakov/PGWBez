@@ -68,8 +68,6 @@ Route::middleware('auth')->group(function () {
     
     Route::resource('/dashboard', dashboardController::class);
 });
-// Route::get('/mastersiswa', [SiswaController::class, 'view']);
-// Route::post('/mastersiswa', [SiswaController::class, 'data']);
 
 
 

@@ -2,6 +2,15 @@
     "folders": [
         {
             "path": "../../../.."
+        },
+        {
+            "path": "../../../../../OneDrive/Dokumen/Ecommerce"
+        },
+        {
+            "path": "../../../../../OneDrive/Dokumen/VSC/projectBerita"
+        },
+        {
+            "path": "../../../../../OneDrive/Dokumen/VSC/newsApp"
         }
     ]
 }

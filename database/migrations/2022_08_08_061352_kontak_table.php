@@ -16,9 +16,9 @@ class KontakTable extends Migration
         Schema::create('kontak', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('siswa_id');
-            $table->foreign('siswa_id')->references('id')->on('siswa');
+            $table->foreign('siswa_id')->references('id')->on('siswa')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('jenis_id');
-            $table->foreign('jenis_id')->references('id')->on('jenis');
+            $table->foreign('jenis_id')->references('id')->on('jenis')->onUpdate('cascade')->onDelete('cascade');
             $table->char('deskripsi');
             $table->timestamps();
         });
